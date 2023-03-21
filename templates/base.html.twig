@@ -1,19 +1,64 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Projet Annonces{% endblock %}</title>
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+{% block stylesheets %}
+    <link rel="stylesheet" href="/Asset/CSS/stylet.css" />
+    {% endblock %}
+
+    {% block javascripts %}
+    <script src="/Asset/JS/header.js"></script>
+{% endblock %}
+</head>
+
+<body>
+
+<header>
+    <nav id='menu'>
+        <input type='checkbox' id='responsive-menu' onclick='updatemenu()'><label></label>
+        <ul>
+            <li><a href=''>Home</a></li>
+            <li><a class='dropdown-arrow' href='#'>Vêtements</a>
+                <ul class='sub-menus'>
+                    <li><a href='#'>Femmes</a></li>
+                    <li><a href='#'>Hommes</a></li>
+                </ul>
+            </li>
+            <li><a class='dropdown-arrow' href='http://'>Accessoires</a>
+                <ul class='sub-menus'>
+                    <li><a href='#'>Chaussures</a></li>
+                    <li><a href='#'>Accessoires</a></li>
+                </ul>
+            </li>
+
+            {% if app.user %}
+            <li><a href='http://'>Messagerie</a></li>
+            {% endif %}
+        </ul>
+
+        <ul>
+         {% if app.user != true %}
+                    <li>
+                        <a href="{{ path('app_register') }}">S'inscrire</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('app_login') }}">Se connecter</a>
+                    </li>
+                    {% endif %}
+
+    {% if app.user %}
+        <li>
+            <a href="{{ path('app_logout') }}">Déconnexion</a>
+            </li>
+    {% endif %}
+        </ul>
+    </nav>
+</header>
+
+{% block body %}{% endblock %}
+
+
+</body>
 </html>
