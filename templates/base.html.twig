@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <title>{% block title %}Projet Annonces{% endblock %}</title>
 
-{% block stylesheets %}
+
     <link rel="stylesheet" href="/Asset/CSS/stylet.css" />
-    {% endblock %}
+{% block stylesheets %}{% endblock %}
 
     {% block javascripts %}
     <script src="/Asset/JS/header.js"></script>
@@ -16,7 +16,7 @@
 <body>
 
 <header>
-    <nav id='menu'>
+    <nav id='menu' class="menu">
         <input type='checkbox' id='responsive-menu' onclick='updatemenu()'><label></label>
         <ul>
             <li><a href=''>Home</a></li>
