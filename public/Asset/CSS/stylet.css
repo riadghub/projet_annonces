@@ -1,5 +1,6 @@
 *{margin: 0;
-padding: 0;}
+padding: 0;
+font-family: 'Montserrat', sans-serif;}
 
 #menu {
 	background: #000000;
@@ -7,6 +8,7 @@ padding: 0;}
 	height: 45px;
 	padding-left: 18px;
 	border-radius: 0px;
+	display: flex;
 }
 #menu ul, #menu li {
 	margin: 0 auto;
@@ -76,12 +78,21 @@ padding: 0;}
 	font-size: 16px;
 }
 #menu li:hover ul.sub-menus {
-	display: block
+	display: block;
 }
 #menu ul.sub-menus a:hover{
 	background: #FFFFFF;
 	color: #000000;
 }
+
+.gauche{
+	/* border: solid hotpink 2px; */
+	height: 45px;
+    display: block;
+	width: 400px;
+	margin-right: 80px;
+}
+
 @media screen and (max-width: 800px){
 	#menu {position:relative}
 	#menu ul {background:#111;position:absolute;top:100%;right:0;left:0;z-index:3;height:auto;display:none}

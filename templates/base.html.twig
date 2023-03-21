@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <title>{% block title %}Projet Annonces{% endblock %}</title>
 
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/Asset/CSS/stylet.css" />
 {% block stylesheets %}{% endblock %}
 
@@ -16,7 +18,7 @@
 <body>
 
 <header>
-    <nav id='menu' class="menu">
+    <nav id='menu'>
         <input type='checkbox' id='responsive-menu' onclick='updatemenu()'><label></label>
         <ul>
             <li><a href=''>Home</a></li>
@@ -38,6 +40,7 @@
             {% endif %}
         </ul>
 
+        <div class ="gauche">
         <ul>
          {% if app.user != true %}
                     <li>
@@ -54,6 +57,7 @@
             </li>
     {% endif %}
         </ul>
+        </div>
     </nav>
 </header>
 
