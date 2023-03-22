@@ -9,6 +9,7 @@ font-family: 'Montserrat', sans-serif;}
 	padding-left: 18px;
 	border-radius: 0px;
 	display: flex;
+	/* width: 100%; */
 }
 #menu ul, #menu li {
 	margin: 0 auto;
