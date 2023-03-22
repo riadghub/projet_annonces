@@ -56,3 +56,25 @@ hr{
     justify-content: center;
     flex-direction: row;
 }
+
+@media (max-width: 768px) {
+    footer {
+      height: auto;
+    }
+    
+    .ftr {
+      flex-direction: column;
+      margin-top: 50px;
+    }
+    
+    footer a {
+      margin-bottom: 10px;
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    footer a {
+      font-size: 12px;
+    }
+  }
