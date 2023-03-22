@@ -1,7 +1,25 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Home{% endblock %}
+
+{% block stylesheets %}    
+<link rel="stylesheet" href="/Asset/CSS/index.css" />
+{% endblock %}
+
 
 {% block body %}
+<div class="bckgrnd">
+<div id="title">
+<h1>Bienvenu</h1>
+</div>
 
+<br>
+<br>
+
+<div id="btn_title">
+<a href="{{ path('app_register') }}" id="btn_title_blanc">Inscription</a>
+<a href="{{ path('app_login') }}" id="btn_title_noir">Connexion</a>
+</div>
+
+</div>
 {% endblock %}

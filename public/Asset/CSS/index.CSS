@@ -1,0 +1,57 @@
+*{margin: 0;
+padding: 0;}
+
+.bckgrnd{
+    background: no-repeat center/100% url(/Images/pexels-alina-vilchenko-1173651.jpg);
+    height: 100vh;
+}
+
+#title{
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+h1{
+    margin-top: 15%;
+}
+
+#btn_title{
+display: flex;
+align-items: center;
+justify-content: space-between;
+/* border: solid hotpink 1px; */
+width: 450px;
+margin-left: 36%;
+}
+
+#btn_title_blanc{
+    background-color: white;
+    border: solid 1px black;
+    color: black;
+    width: 192px;
+    height: 52px;
+    border-radius: 6px;
+    font-size: 17px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#btn_title_noir{
+    background-color: black;
+    color: white;
+    width: 192px;
+    height: 52px;
+    font-size: 17px;
+    border-radius: 6px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
