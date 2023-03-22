@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/Asset/CSS/stylet.css" />
+    <link rel="stylesheet" href="/Asset/CSS/style.css" />
     <link rel="stylesheet" href="/Asset/CSS/footer.css" />
 {% block stylesheets %}{% endblock %}
 
@@ -16,7 +16,6 @@
 {% endblock %}
 </head>
 
-<body>
 
 <header>
     <nav id='menu'>
@@ -47,6 +46,7 @@
                     <li>
                         <a href="{{ path('app_register') }}">S'inscrire</a>
                     </li>
+                    
                     <li>
                         <a href="{{ path('app_login') }}">Se connecter</a>
                     </li>
@@ -61,12 +61,14 @@
         </div>
     </nav>
 </header>
+{% block body %}
+<body>
 
 
-{% block body %}{% endblock %}
 
 
 </body>
+{% endblock %}
 <footer>
 <div class="bottom">
 <div class="ftr">
@@ -87,7 +89,10 @@
 </div>
 
 <br>
+<br>
 <hr>
+<br>
+<br>
 <br>
 <br>
 
@@ -99,6 +104,7 @@
 <a href="https://github.com/CLouiseGZB"><img src="/Images/icon _github_.png" alt=""></a>
 </div>
 
+<br>
 <br>
 
 <div class="link">

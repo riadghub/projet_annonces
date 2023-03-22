@@ -2,16 +2,17 @@
 padding: 0;}
 
 .bckgrnd{
-    background: no-repeat center/100% url(/Images/pexels-alina-vilchenko-1173651.jpg);
+    background: no-repeat center/101% url(/Images/pexels-alina-vilchenko-1173651.jpg);
     height: 100vh;
 }
+
+
 
 #title{
     color: black;
     display: flex;
     align-items: center;
-    justify-content: center;
-    
+    justify-content: center;    
 }
 
 h1{
@@ -42,6 +43,12 @@ margin-left: 36%;
 
 }
 
+#btn_title_blanc:hover{
+    background-color: black;
+    border: none;
+    color: white;
+}
+
 #btn_title_noir{
     background-color: black;
     color: white;
@@ -54,4 +61,10 @@ margin-left: 36%;
     align-items: center;
     justify-content: center;
 
+}
+
+#btn_title_noir:hover{
+    background-color: white;
+    color: black;
+    border: solid black 1px;
 }

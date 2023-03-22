@@ -9,7 +9,6 @@ font-family: 'Montserrat', sans-serif;}
 	padding-left: 18px;
 	border-radius: 0px;
 	display: flex;
-	/* width: 100%; */
 }
 #menu ul, #menu li {
 	margin: 0 auto;
@@ -90,8 +89,10 @@ font-family: 'Montserrat', sans-serif;}
 	/* border: solid hotpink 2px; */
 	height: 45px;
     display: block;
-	width: 400px;
-	margin-right: 80px;
+	width: 300px;
+	margin-right: 30px;
+	display: flex;
+	justify-content: space-between;
 }
 
 @media screen and (max-width: 800px){
