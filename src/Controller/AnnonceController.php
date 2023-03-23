@@ -12,14 +12,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class AnnonceController extends AbstractController
 {
-    #[Route('/annonce', name: 'app_annonce')]
+    #[Route('/post', name: 'app_annonce')]
     public function index(Request $request, EntityManagerInterface $entityManager): Response
     {
         $annonce = new Annonce();
         $form = $this->createForm(AnnonceFormType::class, $annonce);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            
+
             $user = $this->getUser();
             $annonce->setCreatedAt(new \DateTimeImmutable);
             $annonce->setAuthor($user);
