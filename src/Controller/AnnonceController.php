@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Annonce;
+use App\Entity\Categorie;
 use App\Form\AnnonceFormType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -14,7 +15,8 @@ class AnnonceController extends AbstractController
 {
     #[Route('/post', name: 'app_annonce')]
     public function index(Request $request, EntityManagerInterface $entityManager): Response
-    {
+    {   
+        $categorie = new Categorie();
         $annonce = new Annonce();
         $form = $this->createForm(AnnonceFormType::class, $annonce);
         $form->handleRequest($request);
@@ -23,6 +25,7 @@ class AnnonceController extends AbstractController
             $user = $this->getUser();
             $annonce->setCreatedAt(new \DateTimeImmutable);
             $annonce->setAuthor($user);
+            $annonce->setCategorie($categorie);
 
             $entityManager->persist($annonce);
             $entityManager->flush();

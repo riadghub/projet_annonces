@@ -6,13 +6,19 @@ use App\Entity\Annonce;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class AnnonceFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('title')
+            ->add('title',TextType::class,[
+                'label' => 'Titre',
+                'attr' => [
+                    'placeholder' => 'Titre de l\'annonce...'
+                ]
+            ])
             ->add('categorie')
             ->add('product')
         ;
