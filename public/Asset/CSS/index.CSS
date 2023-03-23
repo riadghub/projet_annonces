@@ -23,14 +23,14 @@ h1{
 display: flex;
 align-items: center;
 justify-content: space-between;
-border: solid hotpink 1px;
+/* border: solid hotpink 1px; */
 width: 450px;
 margin-left: 36%;
 }
 
-#btn_title{
+/* #btn_title{
   border: solid hotpink 1px;
-}
+} */
 
 #btn_title_blanc{
     background-color: white;
@@ -58,7 +58,7 @@ margin-left: 36%;
   color: white;
   border: solid 1px transparent;
   width: 192px;
-  height: 51px;
+  height: 52px;
   border-radius: 6px;
   font-size: 17px;
   text-decoration: none;
