@@ -3,14 +3,13 @@
 {% block title %}Home{% endblock %}
 
 {% block stylesheets %}    
-<link rel="stylesheet" href="/Asset/CSS/index.css" />
+<link rel="stylesheet" href="\Asset\CSS\index.css" />
 {% endblock %}
 
 
 {% block body %}
 <div class="bckgrnd">
     <div id="title">
-    
         <h1>Bienvenue {% if app.user %}, {{app.user.username}}. {% endif %}</h1>
     </div>
 

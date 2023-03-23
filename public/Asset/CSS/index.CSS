@@ -23,9 +23,9 @@ h1{
 display: flex;
 align-items: center;
 justify-content: space-between;
-/* border: solid hotpink 1px; */
+border: solid hotpink 1px;
 width: 450px;
-margin-left: 36%;
+/* margin-left: 36%; */
 }
 
 #btn_title_blanc{
