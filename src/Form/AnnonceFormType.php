@@ -13,12 +13,8 @@ class AnnonceFormType extends AbstractType
     {
         $builder
             ->add('title')
-            ->add('createdAt')
-            ->add('updatedAt')
-            ->add('author')
             ->add('categorie')
             ->add('product')
-            ->add('user')
         ;
     }
 

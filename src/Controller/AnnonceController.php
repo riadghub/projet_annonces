@@ -20,14 +20,16 @@ class AnnonceController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             
+            $user = $this->getUser();
             $annonce->setCreatedAt(new \DateTimeImmutable);
+            $annonce->setAuthor($user);
 
             $entityManager->persist($annonce);
             $entityManager->flush();
             // $this->addFlash('success', 'Annonce crée avec succès.');
         }
         return $this->render('annonce/annonce.html.twig', [
-            // 'annonceForm' => $form->createView(),
+            'annonceForm' => $form->createView(),
         ]);
     }
 }
