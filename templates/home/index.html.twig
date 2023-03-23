@@ -11,6 +11,8 @@
 <div class="bckgrnd">
     <div id="title">
         <h1>Bienvenue{% if app.user %}, {{app.user.username}} ! {% endif %}</h1>
+        {% if app.user %}
+        {% endif %}
     </div>
 
 <br>
@@ -21,9 +23,15 @@
         <a href="{{ path('app_register') }}" id="btn_title_blanc">Inscription</a>
         <a href="{{ path('app_login') }}" id="btn_title_noir">Connexion</a>
     </div>
+
+    {% else %}
+    <div id="btn_title">
+        <a href="{{ path('app_annonce') }}" id="btn_title_blanc">Poster</a>
+    </div>
 {% endif %}
 
 </div>
+
 
 <hr>
 
