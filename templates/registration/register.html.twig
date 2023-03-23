@@ -2,32 +2,16 @@
 
 {% block title %}Inscription{% endblock %}
 
-{% block stylesheets %}    
-<link rel="stylesheet" href="/Asset/CSS/form.css" />
-{% endblock %}
-
 {% block body %}
-<div id="container">
-    <div id="top">
-    <h1>Rejoignez-nous !</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-    </div>
+    <h1>S'inscrire</h1>
 
-    <div id="form">
     {{ form_start(registrationForm) }}
-    <div>
-    <h3>Inscription</h3>
-    </div>
         {{ form_row(registrationForm.username) }}
         {{ form_row(registrationForm.plainPassword, {
-            label: 'Mot de passe'
+            label: 'Password'
         }) }}
-    {{ form_end(registrationForm) }}
-    {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.agreeTerms) }}
+
         <button type="submit" class="btn">S'inscrire</button>
     {{ form_end(registrationForm) }}
-
-        
-    </div>
-</div>
 {% endblock %}
