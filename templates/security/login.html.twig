@@ -3,7 +3,7 @@
 {% block title %}Connexion{% endblock %}
 
 {% block stylesheets %}    
-<link rel="stylesheet" href="/Asset/CSS/form.css" />
+<link rel="stylesheet" href="/Asset/CSS/connexion.css" />
 {% endblock %}
 
 {% block body %}
@@ -17,9 +17,11 @@
             Bonjour {{ app.user.userIdentifier }}, vous êtes connecté. <br> <a href="{{ path('app_logout') }}">Se déconnecter</a>
         </div>
     {% endif %}
+
     {% if app.user != true %}
 <div id="form">
     <h1 class="">Connexion</h1>
+    
     <label for="inputUsername">Nom d'utilisateur</label>
     <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" autocomplete="username" required autofocus>
     <label for="inputPassword">Mot de passe</label>

@@ -11,3 +11,4 @@ return function (array $context) {
 ?>
 <div></div>
 <p></p>
+<h1></h1>

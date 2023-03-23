@@ -1,0 +1,66 @@
+*{margin: 0;
+padding: 0;}
+
+/* formulaire d'inscription */
+
+#top{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* justify-content: center; */
+margin-top: 7%;}
+
+h1{
+    font-size: 48px;
+}
+
+#p{
+    display: flex;
+    text-align: center;
+    font-size: 36px;
+    /* border: solid hotpink 1px; */
+    height: 15vh;
+    width: 80vw;
+    padding: 0 67px;
+}
+
+#form2{
+    border: solid grey 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 800px;
+    width: 622px;
+    margin: 100px 400px;
+    padding: 65px;
+
+}
+
+input{
+    height: 20px;
+    display: flex;
+    padding: 14px;
+    font-size: 15px;
+    color: black;
+}
+
+.btn-primary{
+    align-items: center;
+    padding: 14px;
+    width: 130px;
+    background-color: black;
+    color: white;
+    border-radius: 6px;
+    font-weight:500;
+    cursor: pointer;   
+
+}
+
+.btn-primary:hover{
+    background-color: white;
+    border: solid 1px black;
+    color: black;
+    font-weight: 500;
+    cursor: pointer;   
+
+}

@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
 }
-
+/* Formulaire de connexion */
 #form{
     border: solid grey 1px;
     display: flex;
@@ -29,7 +29,7 @@ input{
     background-color: black;
     color: white;
     border-radius: 6px;
-    font-weight:500;   
+    font-weight:500;
 }
 
 .btn-primary:hover{
