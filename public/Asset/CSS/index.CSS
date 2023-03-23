@@ -23,10 +23,14 @@ h1{
 display: flex;
 align-items: center;
 justify-content: space-between;
-border: solid hotpink 1px;
+/* border: solid hotpink 1px; */
 width: 450px;
-/* margin-left: 36%; */
+margin-left: 36%;
 }
+
+/* #btn_title{
+  border: solid hotpink 1px;
+} */
 
 #btn_title_blanc{
     background-color: white;
@@ -45,28 +49,29 @@ width: 450px;
 
 #btn_title_blanc:hover{
     background-color: black;
-    border: none;
+    border: solid transparent 1px;
     color: white;
 }
 
 #btn_title_noir{
-    background-color: black;
-    color: white;
-    width: 192px;
-    height: 52px;
-    font-size: 17px;
-    border-radius: 6px;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background-color: black;
+  color: white;
+  border: solid 1px transparent;
+  width: 192px;
+  height: 52px;
+  border-radius: 6px;
+  font-size: 17px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
 }
 
 #btn_title_noir:hover{
-    background-color: white;
-    color: black;
-    border: solid black 1px;
+  background-color: white;
+  border: solid black 1px;
+  color: black;
 }
 
 @media screen and (max-width: 768px) {
