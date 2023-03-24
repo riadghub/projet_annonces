@@ -28,9 +28,14 @@ width: 450px;
 margin-left: 36%;
 }
 
-/* #btn_title{
-  border: solid hotpink 1px;
-} */
+#btn_post{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: solid hotpink 1px; */
+  width: 450px;
+  margin-left: 36%;
+}
 
 #btn_title_blanc{
     background-color: white;
