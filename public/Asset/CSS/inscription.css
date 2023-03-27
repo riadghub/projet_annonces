@@ -33,16 +33,21 @@ h1{
     width: 622px;
     margin: 100px 400px;
     padding: 65px;
+    box-shadow:0 12px 6px rgb(0 0 0 / 30%) ;
 
 }
 
-input{
+.info{
+    border: solid hotpink 1px;
+}
+
+/* input{
     height: 20px;
     display: flex;
     padding: 14px;
     font-size: 15px;
     color: black;
-}
+} */
 
 .btn-primary{
     align-items: center;
@@ -63,4 +68,23 @@ input{
     font-weight: 500;
     cursor: pointer;   
 
+}
+
+
+@media (max-width: 768px) {
+    #form2 {
+        width: 80%;
+        margin: 100px auto;
+        height: auto;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    #form2 {
+        width: 100%;
+        margin: 50px auto;
+        height: auto;
+        padding: 20px;
+    }
 }

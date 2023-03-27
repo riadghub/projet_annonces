@@ -20,17 +20,27 @@
  {{ form_start(registrationForm) }}    
 <div id="form2">
     <h1>S'inscrire</h1>
-        {{ form_row(registrationForm.username) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.first_name) }}
-        {{ form_row(registrationForm.last_name) }}
-        {{ form_row(registrationForm.address) }}
-        {{ form_row(registrationForm.city) }}
-        {{ form_row(registrationForm.zip_code) }}
-        {{ form_row(registrationForm.country) }}
-        {{ form_row(registrationForm.email) }}
+    
+        <div class="info">{{ form_row(registrationForm.username, { 'attr': {'class': 'input2'} }) }}
+        {{ form_row(registrationForm.plainPassword, {label: 'Mot de passe'}, {placeholder: 'Mot de passe'}, { 'attr': {'class': 'input2'} }) }}
+        </div>
+
+        <div class="info">
+        {{ form_row(registrationForm.first_name, { 'attr': {'class': 'input2'} }) }}
+        {{ form_row(registrationForm.last_name, { 'attr': {'class': 'input2'} }) }}
+        </div>
+
+        <div class="info">
+        {{ form_row(registrationForm.address, { 'attr': {'class': 'input2'} }) }}
+        {{ form_row(registrationForm.city, { 'attr': {'class': 'input2'} }) }}
+        </div>
+
+        <div class="info">
+        {{ form_row(registrationForm.zip_code, { 'attr': {'class': 'input2'} }) }}
+        {{ form_row(registrationForm.country, { 'attr': {'class': 'input2'} }) }}
+        </div>
+
+        {{ form_row(registrationForm.email, { 'attr': {'class': 'input2'} }) }}
 
         {{ form_row(registrationForm.agreeTerms) }}
 
