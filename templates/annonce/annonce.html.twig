@@ -6,7 +6,11 @@
     <h1>Poster une annonce</h1>
 
     {{ form_start(annonceForm) }}
-
-        <button type="submit" class="btn">Poster</button>
+        {{ form_row(annonceForm.title) }}
+        {{ form_row(annonceForm.categorie) }}
+        {{ form_row(annonceForm.product) }}
+        {{ form_row(annonceForm.product_description) }}
+        {{ form_row(annonceForm.price) }}
+        {{ form_row(annonceForm.submit) }}
     {{ form_end(annonceForm) }}
 {% endblock %}
