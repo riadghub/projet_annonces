@@ -8,7 +8,7 @@
     border: solid grey 1px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
     height: 439px;
     width: 622px;
     margin: 100px 400px;
@@ -16,11 +16,10 @@
     box-shadow:0 12px 6px rgb(0 0 0 / 30%) ;
 }
 
-/* .mb-3{
-    height: 500px;
-    width: 100%;
-    border: solid hotpink 1px;
-} */
+label{
+    margin: 25px 0px;
+    /* border: solid hotpink 1px; */
+}
 
 input{
     height: 20px;
@@ -40,7 +39,6 @@ input{
     border-radius: 6px;
     font-weight:500;
     cursor: pointer;
-    
 }
 
 .btn-primary:hover{
