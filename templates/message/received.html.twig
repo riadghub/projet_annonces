@@ -20,5 +20,6 @@
                 {{message.createdAt|date}}
             </div>
         {% endfor %}
+        <a href='{{ path('app_message') }}'>Retour à la messagerie</a>
     {% endif %}
 {% endblock %}

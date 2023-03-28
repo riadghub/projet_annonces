@@ -9,6 +9,8 @@
         <p>--------------------------------</p>
         {% if app.user.received|length == 0 %}
             <p>Aucun message reçu.</p>
+        {% else %}
+            <a href='{{ path('app_received') }}'>Lire mes messages</a>
         {% endif %}
         <a href='{{ path('app_send') }}'>Envoyer un message</a>
     {% endif %}

@@ -4,5 +4,6 @@
     {% if app.user %}
         <h1>Envoyer un message</h1>
         {{form(form)}}
+        <a href='{{ path('app_message') }}'>Retour à la messagerie</a>
     {% endif %}
 {% endblock %}
