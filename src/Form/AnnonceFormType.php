@@ -58,9 +58,7 @@ class AnnonceFormType extends AbstractType
         $builder
             ->add('title',TextType::class,[
                 'label' => 'Titre',
-                'attr' => [
-                    'placeholder' => 'Titre de l\'annonce...'
-                ]
+                'attr' => ['placeholder' => 'Titre de l\'annonce...']
             ])
             ->add('categorie', EntityType::class, [
                 'class' => Categorie::class,
@@ -79,7 +77,7 @@ class AnnonceFormType extends AbstractType
                 'label' => 'Prix',
             ])
             ->add('photo', FileType::class, [
-                'label' => 'Image',
+                'label' => 'Photo',
                 'required' => true,
                 'mapped' => false,
                 'data_class' => null,

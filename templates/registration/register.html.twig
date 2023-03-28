@@ -27,7 +27,10 @@
 {{ form_start(registrationForm) }}    
 <div id="form2">
     <h1>S'inscrire</h1>
-        <div class="info">{{ form_row(registrationForm.username, { 'attr': {'class': 'input2'} }) }}
+        
+        {{ form_row(registrationForm.username, { 'attr': {'class': 'input2'} }) }}
+        
+        <div class="info">
         {{ form_row(registrationForm.password) }}
         </div>
 
@@ -43,12 +46,14 @@
 
         <div class="info">
         {{ form_row(registrationForm.zipCode, { 'attr': {'class': 'input2'} }) }}
-        {{ form_row(registrationForm.country, { 'attr': {'class': 'input2'} }) }}
+        {{ form_row(registrationForm.country, { 'attr': {'class': 'input3'} }) }}
         </div>
 
         {{ form_row(registrationForm.email, { 'attr': {'class': 'input2'} }) }}
 
         {{ form_row(registrationForm.agreeTerms) }}
+
+        <br>
 
         <button type="submit" class="btn-primary">S'inscrire</button>
 </div>

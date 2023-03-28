@@ -1,19 +1,42 @@
 {% extends 'base.html.twig' %}
+
 {% block title %}Poster une annonce{% endblock %}
 
+{% block stylesheets %}    
+<link rel="stylesheet" href="/Asset/CSS/annonce.css" />
+{% endblock %}
+
 {% block body %}
+<div id='top'>
     <h1>Poster une annonce</h1>
+</div>
+
 {% if app.user != true %}
     <p>Veuillez vous connecter pour pouvoir poster une annonce.</p>
-    {% else %}
-    {{ form_start(annonceForm) }}
-        {{ form_row(annonceForm.title) }}
-        {{ form_row(annonceForm.categorie) }}
-        {{ form_row(annonceForm.product) }}
-        {{ form_row(annonceForm.product_description) }}
-        {{ form_row(annonceForm.price) }}
-        {{ form_row(annonceForm.photo) }}
-        {{ form_row(annonceForm.submit) }}
-    {{ form_end(annonceForm) }}
+{% else %}
+
+{{ form_start(annonceForm) }}
+<div id="form">
+
+    {{ form_row(annonceForm.photo, { 'attr': {'class': 'input'} }) }}
+    
+    <br>
+
+    <label for="photo" class="custom-file-upload">Choisir un fichier</label>
+    <input type="file" id="photo" name="photo">
+
+    <br>
+
+    {{ form_row(annonceForm.title, { 'attr': {'class': 'input'} }) }}
+    {{ form_row(annonceForm.categorie, { 'attr': {'class': 'input2'} }) }}
+    {{ form_row(annonceForm.product, { 'attr': {'class': 'input'} }) }}
+    {{ form_row(annonceForm.product_description, { 'attr': {'class': 'input'} }) }}
+    {{ form_row(annonceForm.price, { 'attr': {'class': 'input'} }) }}
+        
+    {{ form_row(annonceForm.submit, { 'attr': {'class': 'btn-primary'} }) }}
+        
+</div>
+{{ form_end(annonceForm) }}
 {% endif %}
+
 {% endblock %}
