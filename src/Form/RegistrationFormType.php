@@ -11,8 +11,10 @@ use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\CountryType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 
 class RegistrationFormType extends AbstractType
 {
@@ -25,13 +27,13 @@ class RegistrationFormType extends AbstractType
                     'placeholder' => 'Pseudo'
                 ]
             ])
-            ->add('first_name',TextType::class,[
+            ->add('firstName',TextType::class,[
                 'label' => 'Prénom',
                 'attr' => [
                     'placeholder' => 'Prénom'
                 ]
             ])
-            ->add('last_name',TextType::class,[
+            ->add('lastName',TextType::class,[
                 'label' => 'Nom',
                 'attr' => [
                     'placeholder' => 'Nom'
@@ -43,47 +45,30 @@ class RegistrationFormType extends AbstractType
                     'placeholder' => 'Adresse'
                 ]
             ])
-            ->add('city',TextType::class,[
-                'label' => 'Ville',
-                'attr' => [
-                    'placeholder' => 'Ville'
-                ]
-            ])
-            ->add('zip_code',TextType::class,[
-                'label' => 'Code Postal',
-                'attr' => [
-                    'placeholder' => 'Code Postal'
-                ]
-            ])
-            ->add('country',TextType::class,[
-                'label' => 'Pays',
-                'attr' => [
-                    'placeholder' => 'Pays'
-                ]
-            ])
             ->add('email',EmailType::class,[
                 'label' => 'Email',
                 'attr' => [
                     'placeholder' => 'mail@fyz.fr'
                 ]
             ])
-            
-            ->add('plainPassword', PasswordType::class, [
-                // instead of being set onto the object directly,
-                // this is read and encoded in the controller
-                'mapped' => false,
-                'attr' => ['autocomplete' => 'new-password'],
-                'constraints' => [
-                    new NotBlank([
-                        'message' => 'Veuillez entrer un mot de passe.',
-                    ]),
-                    new Length([
-                        'min' => 6,
-                        'minMessage' => 'Le mot de passe doit être d\'au-moins {{ limit }} caractères.',
-                        // max length allowed by Symfony for security reasons
-                        'max' => 4096,
-                    ]),
+            ->add('city',TextType::class,[
+                'label' => 'Ville',
+                'attr' => [
+                    'placeholder' => 'Ville'
+                ]
+            ])
+            ->add('zipCode',TextType::class,[
+                'label' => 'Code Postal',
+                'attr' => [
+                    'placeholder' => 'Code Postal'
+                ]
+            ])
+            ->add('country',CountryType::class,[
+                'label' => 'Pays',
+                'attr' => [
+                  //  'placeholder' => 'Pays'
                 ],
+                'preferred_choices' => ['FR','BE','CH','DE'],
             ])
             ->add('agreeTerms', CheckboxType::class, [
                 'label' => 'Accepter les conditions d\'utilisation',
@@ -91,6 +76,28 @@ class RegistrationFormType extends AbstractType
                 'constraints' => [
                     new IsTrue([
                         'message' => 'Veuillez accepter les conditions.',
+                    ]),
+                ],
+            ])
+            ->add('password', RepeatedType::class, [
+                // instead of being set onto the object directly,
+                // this is read and encoded in the controller
+                'type' => PasswordType::class,
+                'invalid_message' => 'The password fields must match.',
+                'options' => ['attr' => ['class' => 'input2']],
+                'required' => true,
+                'first_options'  => ['label' => 'Mot de passe'],
+                'second_options' => ['label' => 'Vérifier le mot de passe'],
+                'attr' => ['autocomplete' => 'new-password'],
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Please enter a password',
+                    ]),
+                    new Length([
+                        'min' => 6,
+                        'minMessage' => 'Your password should be at least {{ limit }} characters',
+                        // max length allowed by Symfony for security reasons
+                        'max' => 4096,
                     ]),
                 ],
             ])

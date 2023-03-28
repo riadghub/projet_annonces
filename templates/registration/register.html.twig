@@ -3,7 +3,7 @@
 {% block title %}Inscription{% endblock %}
 
 {% block stylesheets %}    
-<link rel="stylesheet" href="/Asset/CSS/inscription.css" />
+<link rel="stylesheet" href="/Asset/CSS/inscription2.css" />
 {% endblock %}
 
 {% block body %}
@@ -17,17 +17,17 @@
 </div>
     
 
- {{ form_start(registrationForm) }}    
+{{ form_start(registrationForm) }}    
 <div id="form2">
     <h1>S'inscrire</h1>
     
         <div class="info">{{ form_row(registrationForm.username, { 'attr': {'class': 'input2'} }) }}
-        {{ form_row(registrationForm.plainPassword, {label: 'Mot de passe'}, {placeholder: 'Mot de passe'}, { 'attr': {'class': 'input2'} }) }}
+        {{ form_row(registrationForm.password) }}
         </div>
 
         <div class="info">
-        {{ form_row(registrationForm.first_name, { 'attr': {'class': 'input2'} }) }}
-        {{ form_row(registrationForm.last_name, { 'attr': {'class': 'input2'} }) }}
+        {{ form_row(registrationForm.firstName, { 'attr': {'class': 'input2'} }) }}
+        {{ form_row(registrationForm.lastName, { 'attr': {'class': 'input2'} }) }}
         </div>
 
         <div class="info">
@@ -36,7 +36,7 @@
         </div>
 
         <div class="info">
-        {{ form_row(registrationForm.zip_code, { 'attr': {'class': 'input2'} }) }}
+        {{ form_row(registrationForm.zipCode, { 'attr': {'class': 'input2'} }) }}
         {{ form_row(registrationForm.country, { 'attr': {'class': 'input2'} }) }}
         </div>
 
