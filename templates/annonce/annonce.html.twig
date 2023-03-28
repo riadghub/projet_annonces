@@ -19,13 +19,11 @@
 <div id="form">
 
     {{ form_row(annonceForm.photo, { 'attr': {'class': 'input'} }) }}
-    
-    <br>
 
+    <div id='btn'>
     <label for="photo" class="custom-file-upload">Choisir un fichier</label>
     <input type="file" id="photo" name="photo">
-
-    <br>
+    </div>
 
     {{ form_row(annonceForm.title, { 'attr': {'class': 'input'} }) }}
     {{ form_row(annonceForm.categorie, { 'attr': {'class': 'input2'} }) }}

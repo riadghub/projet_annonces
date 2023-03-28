@@ -4,8 +4,6 @@ padding: 0;
 
 #top{
     display: flex;
-    align-items: center;
-    /* flex-direction: column; */
     justify-content: center;
     margin-top: 7%;}
 
@@ -17,7 +15,6 @@ h1{
     border: solid grey 1px;
     display: flex;
     flex-direction: column;
-    /* justify-content: space-evenly; */
     height: 750px;
     width: 46%;
     margin: 100px 23vw;
@@ -26,6 +23,10 @@ h1{
 
 }
 
+#btn{margin: 25px 0px;
+/* border: solid 1px hotpink; */
+width: fit-content;
+}
 
 .input, .input2{
     height: 20px;
@@ -50,8 +51,6 @@ h1{
     color: white;
     border-radius: 6px;
     font-weight:500;
-    cursor: pointer;   
-
 }
 
 .btn-primary:hover{
@@ -68,14 +67,12 @@ input[type="file"] {
 }
   
 .custom-file-upload {
-    display: inline-block;
     padding: 14px;
     width: 150px;
     background-color: black;
     color: white;
     border-radius: 6px;
     font-weight: 500;
-    cursor: pointer;   
 }
   
 .custom-file-upload:hover {
@@ -83,12 +80,13 @@ input[type="file"] {
     border: solid 1px black;
     color: black;
     font-weight: 500;
-    cursor: pointer;   
+    padding: 14px;
+    width: 150px;
+    cursor: pointer;    
 }
 
 @media only screen and (max-width: 600px) {
     #top {
-        /* flex-direction: column; */
         margin-top: 20px;
     }
     
