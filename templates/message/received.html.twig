@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+{% block title %}Messagerie{% endblock %}
+{% block body %}
+    {% if app.user %}
+        <h1>Messages reçus</h1>
+        <p>Vous avez reçu {{app.user.received|length}}
+        {% if app.user.received|length > 0 %} 
+            messages.</p>
+        {% else %}
+            message.</p>
+        {% endif %}
+        {% for message in app.user.received %}
+            {% set bold = "" %}
+            {% if message.isRead == 0 %}
+                {% set bold = "true" %}
+            {% endif %}
+            <div class = {{bold}}>
+                {{message.sender.email}}
+                <a href="{{path('app_read',{id:message.id})}}">{{message.title}}</a>
+                {{message.createdAt|date}}
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

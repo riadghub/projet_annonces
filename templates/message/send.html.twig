@@ -1,0 +1,8 @@
+{% extends 'base.html.twig' %}
+{% block title %}Messagerie{% endblock %}
+{% block body %}
+    {% if app.user %}
+        <h1>Envoyer un message</h1>
+        {{form(form)}}
+    {% endif %}
+{% endblock %}
