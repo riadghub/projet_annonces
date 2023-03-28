@@ -38,24 +38,4 @@ class MessageController extends AbstractController
             'form' => $form->createView()
         ]);
     }
-    #[Route('/received', name: 'app_received')]
-    public function received(): Response
-    {
-        return $this->render('message/received.html.twig', [
-            'controller_name' => 'MessageController',
-        ]);
-    }
-    #[Route('/read', name: 'app_read')]
-    public function read(Message $message, EntityManagerInterface $entityManager): Response
-    {
-        $message->setIsRead(true);
-
-        $entityManager->persist($message);
-        $entityManager->flush();
-
-        return $this->render('message/read.html.twig', [
-            'controller_name' => 'MessageController',
-            compact('message'),
-        ]);
-    }
 }

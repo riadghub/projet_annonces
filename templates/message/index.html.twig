@@ -10,7 +10,17 @@
         {% if app.user.received|length == 0 %}
             <p>Aucun message reçu.</p>
         {% else %}
-            <a href='{{ path('app_received') }}'>Lire mes messages</a>
+            <h1>Messages reçus</h1>
+            {% for message in app.user.received %}
+                {% set bold = "" %}
+                {% if message.isRead == 0 %}
+                    {% set bold = "true" %}
+                {% endif %}
+                <h2>Sujet : {{message.title}}</h2>
+                <p>Message de {{message.sender.username}}
+                <p>Le {{message.createdAt|date}}</p>
+                <div>{{message.message}}</div>
+            {% endfor %}
         {% endif %}
         <a href='{{ path('app_send') }}'>Envoyer un message</a>
     {% endif %}
