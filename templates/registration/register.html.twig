@@ -16,11 +16,17 @@
 <p id="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
 </div>
     
-
+{% if app.user %}
+        <div class="mb-3">
+        <p>Bonjour {{ app.user.userIdentifier }}, vous êtes connecté. </p>
+        <br> 
+        <a href="{{ path('app_logout') }}">Se déconnecter</a>
+        </div>
+{% endif %}
+{% if app.user != true %}
 {{ form_start(registrationForm) }}    
 <div id="form2">
     <h1>S'inscrire</h1>
-    
         <div class="info">{{ form_row(registrationForm.username, { 'attr': {'class': 'input2'} }) }}
         {{ form_row(registrationForm.password) }}
         </div>
@@ -47,5 +53,5 @@
         <button type="submit" class="btn-primary">S'inscrire</button>
 </div>
 {{ form_end(registrationForm) }}        
-
+{% endif %}
 {% endblock %}

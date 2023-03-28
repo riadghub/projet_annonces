@@ -1,16 +1,19 @@
 {% extends 'base.html.twig' %}
-
 {% block title %}Poster une annonce{% endblock %}
 
 {% block body %}
     <h1>Poster une annonce</h1>
-
+{% if app.user != true %}
+    <p>Veuillez vous connecter pour pouvoir poster une annonce.</p>
+    {% else %}
     {{ form_start(annonceForm) }}
         {{ form_row(annonceForm.title) }}
         {{ form_row(annonceForm.categorie) }}
         {{ form_row(annonceForm.product) }}
         {{ form_row(annonceForm.product_description) }}
         {{ form_row(annonceForm.price) }}
+        {{ form_row(annonceForm.photo) }}
         {{ form_row(annonceForm.submit) }}
     {{ form_end(annonceForm) }}
+{% endif %}
 {% endblock %}

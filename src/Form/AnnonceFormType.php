@@ -80,7 +80,7 @@ class AnnonceFormType extends AbstractType
             ])
             ->add('photo', FileType::class, [
                 'label' => 'Image',
-                'required' => false,
+                'required' => true,
                 'mapped' => false,
                 'data_class' => null,
             ])
