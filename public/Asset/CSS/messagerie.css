@@ -1,0 +1,70 @@
+*{margin: 0px;
+padding: 0px;}
+
+#container{
+    margin: 1%;
+}
+
+.box, .box2{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+h2{
+padding: 10px;}
+
+.box{
+    margin-left: 20px;
+}
+
+.box2{
+    padding: 10px;
+}
+
+#mail{
+    /* border: solid 1px hotpink; */
+    /* display: block; */
+    /* height: 50px; */
+}
+
+table.GeneratedTable {
+    /* max-width: 5% !important; */
+    /* background-color: #ffffff; */
+    border-collapse: collapse;
+    border: solid 1px;
+    /* color: #000000; */
+    margin: 3%;
+    width: 93%;
+    box-shadow:0 12px 6px rgb(0 0 0 / 30%) ;
+
+  }
+  
+  table.GeneratedTable td, table.GeneratedTable th {
+    border: solid 1px;
+    padding: 3px;
+  }
+
+
+
+  .btn-primary{
+    align-items: center;
+    text-decoration: none;
+    padding: 14px;
+    width: 130px;
+    background-color: black;
+    color: white;
+    border-radius: 6px;
+    font-weight:500;
+    cursor: pointer;
+    margin-left: 85%;
+}
+
+.btn-primary:hover{
+    background-color: white;
+    border: solid 1px black;
+    color: black;
+    font-weight: 500;
+    text-decoration: none;
+}

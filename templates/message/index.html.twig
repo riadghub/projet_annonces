@@ -1,27 +1,72 @@
 {% extends 'base.html.twig' %}
+
 {% block title %}Messagerie{% endblock %}
+
+{% block stylesheets %}    
+<link rel="stylesheet" href="/Asset/CSS/messagerie.css" />
+{% endblock %}
+
 {% block body %}
+<div id="container">
     {% if app.user %}
-        <h1>Messagerie</h1>
-        <p>Mes messages :</p>
+    <h1>Messagerie</h1>
+    <div class='box'>    
+        {# <h2>Mes messages :</h2> #}
         <p>Reçus : {{app.user.received|length}}</p>
-        <p>Envoyés : {{app.user.sent|length}}</p>
-        <p>--------------------------------</p>
+        <p>Envoyés : {{app.user.sent|length}}</p>    
+    </div>
+
         {% if app.user.received|length == 0 %}
+        <div class='box'>
             <p>Aucun message reçu.</p>
+        </div>
+
         {% else %}
-            <h1>Messages reçus</h1>
+        <table class="GeneratedTable">
+        <thead>
+            <tr>
+            <th><h2>Messages reçus</h2></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+            <td>
+        <div class='box2'>
+        {% set message = 0 %}
             {% for message in app.user.received %}
                 {% set bold = "" %}
+
                 {% if message.isRead == 0 %}
                     {% set bold = "true" %}
                 {% endif %}
-                <h2>Sujet : {{message.title}}</h2>
-                <p>Message de {{message.sender.username}}
+
+                <div id='info'>
+                <h3>Message de {{message.sender.username}}</h3>
+                <h4>Sujet : {{message.title}}</h4>
                 <p>Le {{message.createdAt|date}}</p>
-                <div>{{message.message}}</div>
+                <p id='mail' >{{message.message}}</p>
+
+                <br>
+
+                <a href='{{ path('app_send') }}' class='btn-primary'>Envoyer un message</a>
+                </div>
+
+                <br>
+                <hr>
+                <br>
             {% endfor %}
+        </div>
+            </td>
+            </tr>
+            </tbody>
+            </table>
         {% endif %}
-        <a href='{{ path('app_send') }}'>Envoyer un message</a>
+
+        
+</div>
+
     {% endif %}
+
+
 {% endblock %}

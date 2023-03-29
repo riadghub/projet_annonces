@@ -20,7 +20,9 @@ class MessageFormType extends AbstractType
             ->add('title',TextType::class,[
 
             ])
-            ->add('message',TextareaType::class)
+            ->add('message',TextareaType::class, [
+                'attr' => ['maxlength' => 255]
+            ])
             ->add('recipient',EntityType::class,[
                 "class" => User::class,
                 "choice_label" => 'email'
