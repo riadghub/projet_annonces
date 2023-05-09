@@ -22,7 +22,6 @@ class AnnonceController extends AbstractController
         $form = $this->createForm(AnnonceFormType::class, $annonce);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-
             $user = $this->getUser();
             $imageFile = $form->get('photo')->getData();
             if ($imageFile) {

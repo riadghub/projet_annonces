@@ -126,7 +126,6 @@ class Annonce
     public function setUser(?User $user): self
     {
         $this->user = $user;
-
         return $this;
     }
 }
